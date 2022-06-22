@@ -1,23 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import authApi from './authApi';
+import tokenApi from './tokenApi';
+ 
 function App() {
+  const regex = /code=(.*)/gm;
+
+  const str = window.location.href;
+  let code;
+  let token_code="";
+
+  while ((code = regex.exec(str)) !== null) {
+      if (code.index === regex.lastIndex) {
+          regex.lastIndex++;
+      }
+      
+      code.forEach((match, groupIndex) => {
+          // console.log(`Found match, group ${groupIndex}: ${match}`);
+          token_code = match;
+      });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {
+          token_code == "" 
+          ?<button className="btn btn-primary" type='button' onClick={() => authApi()}>Authenticate</button>
+          :<button className="btn btn-primary" type='button' onClick={() => tokenApi(token_code)}>Get Token</button>
+        }
       </header>
     </div>
   );
