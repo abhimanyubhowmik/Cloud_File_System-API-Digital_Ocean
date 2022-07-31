@@ -16,9 +16,9 @@ function tokenApi(token_code,setCheck,check){
     .then(response => response.json())
     .then(response => {
         console.log(response);
-       if(response)
+       if(response){
         setCheck(true)
-        console.log(check);
+        console.log(check);}
         
     })
     .catch(err => { 
