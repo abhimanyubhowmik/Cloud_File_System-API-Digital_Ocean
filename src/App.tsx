@@ -6,7 +6,7 @@ import tokenApi from './tokenApi';
 
  
 function App() {
-  let Navigate = useNavigate()
+  
   const regex = /code=(.*)/gm;
 
   const str = window.location.href;
