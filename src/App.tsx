@@ -3,7 +3,6 @@ import authApi from './authApi';
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 import tokenApi from './tokenApi';
-import Spaces from './Spaces'; 
 
 function App() {
   
@@ -47,7 +46,7 @@ function App() {
         
           <label htmlFor="file">Upload a file</label>
           <input type="file" name="upload" />
-          <input type="submit" className="button" onClick={()=>Spaces()}/>
+          <input type="submit" className="button" />
         
         
         </div>
