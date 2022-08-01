@@ -3,8 +3,8 @@ import authApi from './authApi';
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 import tokenApi from './tokenApi';
+import Spaces from './Spaces'; 
 
- 
 function App() {
   
   const regex = /code=(.*)/gm;
@@ -44,13 +44,14 @@ function App() {
         
         <p>Please select a file and submit the form to upload an asset to your DigitalOcean Space.</p>
         
-        <form method="post" encType="multipart/form-data" action="/upload">
+        
           <label htmlFor="file">Upload a file</label>
-          <input type="file" name="upload"/>
-          <input type="submit" className="button"/>
-        </form>
+          <input type="file" name="upload" />
+          <input type="submit" className="button" onClick={()=>Spaces()}/>
+        
         
         </div>
+        
       }
       </header>
       
@@ -59,3 +60,5 @@ function App() {
 }
 
 export default App;
+
+
