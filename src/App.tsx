@@ -3,7 +3,7 @@ import authApi from './authApi';
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 import tokenApi from './tokenApi';
-
+import navigate from './navigate';
  
 function App() {
   
@@ -39,24 +39,7 @@ function App() {
           :!check ?<button className="btn btn-primary" type='button' onClick={() => tokenApi(token_code,setCheck,check)}>Get Token</button>
           
         :
-          <div>
-        <input 
-                                className="upload-path"
-                                type="text"                                
-                                placeholder="Enter Bucket Name"
-                                name="bucketName"
-                                
-                            />
-                            <button 
-                                className="browser"
-                                type="button"
-                                onClick={()=>{
-                                    
-                                }}
-                                >
-                                    <span>Choose File</span>
-                            </button>
-      </div>
+        <button className="btn btn-primary" type='button' onClick={() => navigate()}>Navigate</button>
 
       }
       </header>
