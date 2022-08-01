@@ -39,8 +39,19 @@ function App() {
           :!check ?<button className="btn btn-primary" type='button' onClick={() => tokenApi(token_code,setCheck,check)}>Get Token</button>
           
         :
-        <button className="btn btn-primary" type='button' >Navigate</button>
+        <div>...
 
+        <h1>DigitalOcean Spaces Tutorial</h1>
+        
+        <p>Please select a file and submit the form to upload an asset to your DigitalOcean Space.</p>
+        
+        <form method="post" encType="multipart/form-data" action="/upload">
+          <label htmlFor="file">Upload a file</label>
+          <input type="file" name="upload"/>
+          <input type="submit" className="button"/>
+        </form>
+        
+        </div>
       }
       </header>
       
