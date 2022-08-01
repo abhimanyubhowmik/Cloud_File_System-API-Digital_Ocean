@@ -18,7 +18,6 @@ function tokenApi(token_code,setCheck,check){
         console.log(response);
       
         setCheck(true)
-        console.log(check);
         
     })
     .catch(err => { 

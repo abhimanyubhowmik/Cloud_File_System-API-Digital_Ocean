@@ -39,7 +39,7 @@ function App() {
           :!check ?<button className="btn btn-primary" type='button' onClick={() => tokenApi(token_code,setCheck,check)}>Get Token</button>
           
         :
-        <button className="btn btn-primary" type='button' onClick={() => navigate()}>Navigate</button>
+        <button className="btn btn-primary" type='button' onClick={() => './demo.js'}>Navigate</button>
 
       }
       </header>
