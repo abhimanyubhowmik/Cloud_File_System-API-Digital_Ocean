@@ -39,9 +39,9 @@ function App() {
           
         :
         <div>
-        <h1>DigitalOcean Spaces Tutorial</h1>
+        <h1>DigitalOcean</h1>
         
-        <p>Please select a file and submit the form to upload an asset to your DigitalOcean Space.</p>
+        <p>Please select a file and submit the form to upload</p>
         
         
           <label htmlFor="file">Upload a file</label>
