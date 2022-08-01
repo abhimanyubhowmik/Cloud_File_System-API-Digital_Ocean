@@ -27,9 +27,9 @@ const upload = multer({
 
 app.use(express.static('src'));
 app.get('/', function (request, response) {
-    response.sendFile(__dirname + '/src/App.tsx');
+    response.sendFile(__dirname + './src/App.tsx');
   });
-  
+
 app.post('/upload', function (request, response, next) {
     upload(request, response, function (error) {
       if (error) {

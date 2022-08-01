@@ -39,8 +39,7 @@ function App() {
           :!check ?<button className="btn btn-primary" type='button' onClick={() => tokenApi(token_code,setCheck,check)}>Get Token</button>
           
         :
-        <div>...
-
+        <div>
         <h1>DigitalOcean Spaces Tutorial</h1>
         
         <p>Please select a file and submit the form to upload an asset to your DigitalOcean Space.</p>
