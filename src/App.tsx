@@ -5,7 +5,6 @@ import { useState } from 'react';
 import tokenApi from './tokenApi';
 
 function App() {
-  
   const regex = /code=(.*)/gm;
 
   const str = window.location.href;
@@ -38,18 +37,28 @@ function App() {
           :!check ?<button className="btn btn-primary" type='button' onClick={() => tokenApi(token_code,setCheck,check)}>Get Token</button>
           
         :
-        <div>
-        <h1>DigitalOcean</h1>
+        <button className="btn btn-primary" type='button'>
+          <a href='./main.js'> Perform functions</a></button>
+
+//         <div>
+//         <h1>DigitalOcean</h1>
         
-        <p>Please select a file and submit the form to upload</p>
-        
-        
-          <label htmlFor="file">Upload a file</label>
-          <input type="file" name="upload" />
-          <input type="submit" className="button" />
+//         <p>Please select a file and submit the form to upload</p>
         
         
-        </div>
+//           <label htmlFor="file">Upload a file</label>
+//           <input type="file" name="upload" />
+//           <input type="submit" className="button" />
+        
+//           var bucketName = 'myBucket';
+//         s3.deleteBucket({ Bucket: bucketName }, function (err, data) {
+//     if (!err) {
+//         console.log(data) // successful response
+//     } else {
+//         console.log(err)  // an error ocurred
+//     }
+// });
+//         </div>
         
       }
       </header>
