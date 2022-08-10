@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import './App.css';
 
-export default class main extends Component {
+class main extends Component {
   render() {
     return (
-      <div>main</div>
+      <div>Welcome to Digital Ocean</div>
     )
   }
 }
