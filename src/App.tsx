@@ -3,6 +3,7 @@ import authApi from './authApi';
 import {useNavigate} from 'react-router-dom'
 import { useState } from 'react';
 import tokenApi from './tokenApi';
+import main from './main';
 
 function App() {
   const regex = /code=(.*)/gm;
@@ -37,8 +38,7 @@ function App() {
           :!check ?<button className="btn btn-primary" type='button' onClick={() => tokenApi(token_code,setCheck,check)}>Get Token</button>
           
         :
-        <button className="btn btn-primary" type='button'>
-          <a href='./main.js'> Perform functions</a></button>
+        <button className="btn btn-primary" type='button' onClick={() => main()}>Perform functions</button>
 
 //         <div>
 //         <h1>DigitalOcean</h1>

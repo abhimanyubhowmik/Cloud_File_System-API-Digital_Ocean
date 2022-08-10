@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
-import './App.css';
+import './App.css'
 
-class main extends Component {
-  render() {
-    return (
-      <div>Welcome to Digital Ocean</div>
+function main(){
+    console.log('Perform functions')
+    return(
+        <div>Main Called</div>
     )
-  }
 }
+export default main
