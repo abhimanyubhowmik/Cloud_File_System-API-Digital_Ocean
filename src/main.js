@@ -1,5 +1,6 @@
 import './App.css'
 import { S3 } from "@aws-sdk/client-s3";
+import { DeleteObjectCommand } from "@aws-sdk/client-s3";
 
 async function main(){
     const s3Client = new S3({
