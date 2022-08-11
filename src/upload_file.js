@@ -31,5 +31,5 @@ console.log('Ready');
 
 }
 
-export default delete_file;
+export default upload_file;
     
