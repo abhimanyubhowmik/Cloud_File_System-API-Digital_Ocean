@@ -9,7 +9,9 @@ function main(){
       accessKeyId: process.env.SPACES_KEY,
       secretAccessKey: process.env.SPACES_SECRET
     }
+    
 });
+console.log('Ready');
 }
 
 export default main;
