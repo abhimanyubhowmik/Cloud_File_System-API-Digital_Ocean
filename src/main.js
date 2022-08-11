@@ -1,7 +1,7 @@
 import './App.css'
 import { S3 } from "@aws-sdk/client-s3";
 
-function main(){
+async function main(){
     const s3Client = new S3({
     endpoint: "https://fra1.digitaloceanspaces.com",
     region: "us-east-1",
