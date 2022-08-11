@@ -40,9 +40,9 @@ function App() {
           
         :
         <div>
-        <button className="btn btn-primary" type='button' onClick={() => delete_file()}>Delete</button>
+        <button className="btn btn-primary" type='button' onClick={() => delete_file()}>Delete</button><br></br>
         <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button>
-          </div>
+        </div>
 /* //         <div>
 //         <h1>DigitalOcean</h1>
         
@@ -54,8 +54,7 @@ function App() {
 //           <input type="submit" className="button" />
         
 //           var bucketName = 'myBucket';
-//         s3.deleteBucket({ Bucket: bucketName }, function (err, data) { */}
-//     if (!err) {
+//         s3.deleteBucket({ Bucket: bucketName }, function (err, data) { */
 //         console.log(data) // successful response
 //     } else {
 //         console.log(err)  // an error ocurred
