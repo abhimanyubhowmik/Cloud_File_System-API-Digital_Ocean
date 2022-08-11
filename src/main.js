@@ -6,12 +6,22 @@ function main(){
     endpoint: "https://fra1.digitaloceanspaces.com",
     region: "us-east-1",
     credentials: {
-      accessKeyId: process.env.SPACES_KEY,
-      secretAccessKey: process.env.SPACES_SECRET
+      accessKeyId: "DO00BQRW33FHKVXXTQ2N",
+      secretAccessKey: "CK8wnGQ/VvMRye1ZcAfSUoNHm5ID3w4zOBenVzkwu44"
     }
     
 });
+
 console.log('Ready');
+ const bucketParams = { Bucket: "testingspace11", Key: "landscape.jpg" };
+try {
+  const data = await s3Client.send(new DeleteObjectCommand(bucketParams));
+  console.log("Success", data);
+  return data;
+} catch (err) {
+  console.log("Error", err);
+}
+
 }
 
 export default main;
