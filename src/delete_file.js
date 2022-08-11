@@ -2,7 +2,7 @@ import './App.css'
 import { S3 } from "@aws-sdk/client-s3";
 import { DeleteObjectCommand } from "@aws-sdk/client-s3";
 
-async function main(){
+async function delete_file(){
     const s3Client = new S3({
     endpoint: "https://fra1.digitaloceanspaces.com",
     region: "us-east-1",
@@ -25,5 +25,5 @@ try {
 
 }
 
-export default main;
+export default delete_file;
     
