@@ -28,11 +28,13 @@ const bucketParams = {
   //     stream.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
   //   });
   // };
-  var message = "My String"
+  var message = "My String";
+
   toString(response.Body).then(function (msg) {
     console.log(msg);
     message=msg;
   })
+  
   try {
     const response = await s3Client.send(new GetObjectCommand(bucketParams));
     console.log("Inside try block1");
