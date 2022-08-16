@@ -1,6 +1,6 @@
 import { GetObjectCommand } from "@aws-sdk/client-s3";
-//import { writeFileSync } from "fs";
-import {toString} from "stream-to-string";
+import { GetObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { S3 } from "@aws-sdk/client-s3";
 
 async function download_file(){
@@ -19,44 +19,10 @@ const bucketParams = {
     Key: "example.txt"
   };
   
-  // Function to turn the file's body into a string.
-  // const streamToString = (stream) => {
-  //   const chunks = [];
-  //   return new Promise((resolve, reject) => {
-  //     stream.on('data', (chunk) => chunks.push(Buffer.from(chunk)));
-  //     stream.on('error', (err) => reject(err));
-  //     stream.on('end', () => resolve(Buffer.concat(chunks).toString('utf8')));
-  //   });
-  // };
-  var message = "My String";
-
-  
-  // toString(response.Body).then(function (msg) {
-  //   console.log(msg);
-  //   message=msg;
-  // })
-
   try {
-    const response = await s3Client.send(new GetObjectCommand(bucketParams));
-
-    /*var mydata;
-    try{
-      mydata = await toString(response.Body);
-    }catch(e){
-      console.log(e);
-    }*/
-
-    console.log("Inside try block1");
-    console.log(response.Body.json());
-    //console.log(message);
-    //console.log(mydata);
-    console.log("Inside try block2");
-
-    //const data = await streamToString(response.Body);
-    //writeFileSync("downloaded-file.txt", data);
-    //console.log("Success", data);
-    //return data;
-    return message;
+    const url = await getSignedUrl(s3Client, new GetObjectCommand(bucketParams), { expiresIn: 15 * 60 }); // Adjustable expiration.
+    console.log("URL:", url);
+    return url;
   } catch (err) {
     console.log("Error", err);
   }
