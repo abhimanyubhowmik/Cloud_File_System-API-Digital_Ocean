@@ -30,12 +30,6 @@ const bucketParams = {
   // };
   var message = "My String";
 
-  try{
-    var data1 = await toString(response.Body);
-  }catch(e){
-    console.log(e);
-  }
-
   
   // toString(response.Body).then(function (msg) {
   //   console.log(msg);
