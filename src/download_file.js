@@ -1,5 +1,4 @@
 import { GetObjectCommand } from "@aws-sdk/client-s3";
-import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { S3 } from "@aws-sdk/client-s3";
 
@@ -12,15 +11,17 @@ async function download_file(){
       secretAccessKey: "CK8wnGQ/VvMRye1ZcAfSUoNHm5ID3w4zOBenVzkwu44"
     }
     
-});
-console.log('Ready');
-const bucketParams = {
+  });
+  
+  console.log('Ready');
+  
+  const bucketParams = {
     Bucket: "testingspace11",
     Key: "example.txt"
   };
   
   try {
-    const url = await getSignedUrl(s3Client, new GetObjectCommand(bucketParams), { expiresIn: 15 * 60 }); // Adjustable expiration.
+    const url = await getSignedUrl(s3Client, new GetObjectCommand(bucketParams), { expiresIn: 15 * 60 });
     console.log("URL:", url);
     return url;
   } catch (err) {
