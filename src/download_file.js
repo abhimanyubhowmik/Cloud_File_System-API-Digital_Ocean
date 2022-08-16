@@ -1,5 +1,5 @@
 import { GetObjectCommand } from "@aws-sdk/client-s3";
-import { writeFileSync } from "fs";
+//import { writeFileSync } from "fs";
 import { S3 } from "@aws-sdk/client-s3";
 
 async function download_file(){
@@ -31,7 +31,7 @@ const bucketParams = {
   try {
     const response = await s3Client.send(new GetObjectCommand(bucketParams));
     const data = await streamToString(response.Body);
-    writeFileSync("downloaded-file.txt", data);
+    //writeFileSync("downloaded-file.txt", data);
     console.log("Success", data);
     return data;
   } catch (err) {
