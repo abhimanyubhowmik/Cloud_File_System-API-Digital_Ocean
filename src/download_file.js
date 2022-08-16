@@ -30,7 +30,8 @@ const bucketParams = {
   
   try {
     const response = await s3Client.send(new GetObjectCommand(bucketParams));
-    const data = await streamToString(response.Body);
+    console.log(response.Body)
+    //const data = await streamToString(response.Body);
     //writeFileSync("downloaded-file.txt", data);
     console.log("Success", data);
     return data;
