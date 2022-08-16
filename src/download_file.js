@@ -39,8 +39,9 @@ const bucketParams = {
   try {
     const response = await s3Client.send(new GetObjectCommand(bucketParams));
 
+    var mydata;
     try{
-      var data1 = await toString(response.Body);
+      mydata = await toString(response.Body);
     }catch(e){
       console.log(e);
     }
@@ -48,7 +49,7 @@ const bucketParams = {
     console.log("Inside try block1");
     console.log(response.Body);
     //console.log(message);
-    console.log(data1);
+    console.log(mydata);
     console.log("Inside try block2");
 
     //const data = await streamToString(response.Body);
