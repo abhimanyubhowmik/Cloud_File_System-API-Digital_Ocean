@@ -5,6 +5,7 @@ import { useState } from 'react';
 import tokenApi from './tokenApi';
 import delete_file from './delete_file';
 import upload_file from './upload_file';
+import download_file from "./download_file";
 
 function App() {
   const regex = /code=(.*)/gm;
@@ -40,27 +41,13 @@ function App() {
           
         :
         <div>
+          
+          <input type="text" name='del-file'/>
         <button className="btn btn-primary" type='button' onClick={() => delete_file()}>Delete</button><br></br>
         <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button>
+        <button className="btn btn-primary" type='button' onClick={() => download_file()}>Download</button>
         </div>
-/* //         <div>
-//         <h1>DigitalOcean</h1>
-        
-//         <p>Please select a file and submit the form to upload</p>
-        
-        
-//           <label htmlFor="file">Upload a file</label>
-//           <input type="file" name="upload" />
-//           <input type="submit" className="button" />
-        
-//           var bucketName = 'myBucket';
-//         s3.deleteBucket({ Bucket: bucketName }, function (err, data) { */
-//         console.log(data) // successful response
-//     } else {
-//         console.log(err)  // an error ocurred
-//     }
-// });
-//         </div>
+
         
       }
       </header>
