@@ -42,7 +42,7 @@ function App() {
         :
         <div>
           
-          <input type="text" name='del-file'/>
+          
         <button className="btn btn-primary" type='button' onClick={() => delete_file()}>Delete</button><br></br>
         <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button>
         <button className="btn btn-primary" type='button' onClick={() => download_file()}>Download</button>
