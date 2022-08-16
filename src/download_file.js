@@ -33,8 +33,9 @@ const bucketParams = {
     console.log(response.Body)
     //const data = await streamToString(response.Body);
     //writeFileSync("downloaded-file.txt", data);
-    console.log("Success", data);
-    return data;
+    //console.log("Success", data);
+    //return data;
+    return "test";
   } catch (err) {
     console.log("Error", err);
   }
