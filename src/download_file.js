@@ -47,7 +47,7 @@ const bucketParams = {
     }*/
 
     console.log("Inside try block1");
-    console.log(response.Body.text);
+    console.log(response.Body.json());
     //console.log(message);
     //console.log(mydata);
     console.log("Inside try block2");
