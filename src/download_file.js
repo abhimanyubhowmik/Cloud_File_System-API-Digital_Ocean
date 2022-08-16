@@ -41,7 +41,7 @@ const bucketParams = {
 
     var mydata;
     try{
-      mydata = await toString(response.Body);
+      mydata = await this.toString(response.Body);
     }catch(e){
       console.log(e);
     }
