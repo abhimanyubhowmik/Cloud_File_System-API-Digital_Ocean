@@ -1,5 +1,5 @@
 import { GetObjectCommand } from "@aws-sdk/client-s3";
-import { writeFileSync } from "fs";
+import { writeFileSync } from "file-system";
 import { S3 } from "@aws-sdk/client-s3";
 
 async function download_file(){
