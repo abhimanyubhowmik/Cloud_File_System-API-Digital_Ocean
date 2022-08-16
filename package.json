@@ -14,6 +14,7 @@
     "aws-sdk": "^2.1185.0",
     "digitalocean-spaces": "^1.0.0",
     "formidable-serverless": "^1.1.1",
+    "fs": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
