@@ -52,7 +52,8 @@ function App() {
         <input type="text" name="del" onChange={handleChange} value={message} placeholder="Enter the file name"></input><br></br>
         <button className="btn btn-primary" type='button' onClick={() => delete_file(message)}>Delete</button><br></br>
         <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button><br></br>
-        <button className="btn btn-primary" type='button' onClick={() => download_file(message)}>Download</button>
+        <button className="btn btn-primary" type='button' onClick={() => download_file(message, "1")}>Download</button>
+        <button className="btn btn-primary" type='button' onClick={() => download_file(message, "0")}>Share</button>
         </div>
 
         
