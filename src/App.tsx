@@ -20,7 +20,7 @@ function App() {
   const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
     setMessage(event.target.value);
 
-    console.log('value is:', event.target.value);
+    //console.log('value is:', event.target.value);
   };
 
   while ((code = regex.exec(str)) !== null) {
@@ -49,8 +49,8 @@ function App() {
         :
         <div>
           
-        <input type="text" name="del" onChange={handleChange} value={message} ></input>
-        <button className="btn btn-primary" type='button' onClick={() => delete_file("file")}>Delete</button><br></br>
+        <input type="text" name="del" onChange={handleChange} value={message} placeholder="Enter the file name"></input><br></br>
+        <button className="btn btn-primary" type='button' onClick={() => delete_file(message)}>Delete</button><br></br>
         <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button><br></br>
         <button className="btn btn-primary" type='button' onClick={() => download_file(message)}>Download</button>
         </div>
