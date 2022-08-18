@@ -1,7 +1,7 @@
 import './App.css';
 import authApi from './authApi';
 import {useNavigate} from 'react-router-dom'
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import tokenApi from './tokenApi';
 import delete_file from './delete_file';
 import upload_file from './upload_file';
@@ -15,6 +15,13 @@ function App() {
   let token_code="";
   const [check,setCheck]=useState(false)
   
+  const [message, setMessage] = useState('');
+
+  const handleChange = (event: { target: { value: SetStateAction<string>; }; }) => {
+    setMessage(event.target.value);
+
+    console.log('value is:', event.target.value);
+  };
 
   while ((code = regex.exec(str)) !== null) {
       if (code.index === regex.lastIndex) {
@@ -42,10 +49,10 @@ function App() {
         :
         <div>
           
-        <input type="text" name="del"></input>
+        <input type="text" name="del" onChange={handleChange} value={message} ></input>
         <button className="btn btn-primary" type='button' onClick={() => delete_file("file")}>Delete</button><br></br>
         <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button><br></br>
-        <button className="btn btn-primary" type='button' onClick={() => download_file("file")}>Download</button>
+        <button className="btn btn-primary" type='button' onClick={() => download_file(message)}>Download</button>
         </div>
 
         
