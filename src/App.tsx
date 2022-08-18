@@ -42,10 +42,10 @@ function App() {
         :
         <div>
           
-          
-        <button className="btn btn-primary" type='button' onClick={() => delete_file()}>Delete</button><br></br>
-        <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button>
-        <button className="btn btn-primary" type='button' onClick={() => download_file()}>Download</button>
+        <input type="text" name="del"></input>
+        <button className="btn btn-primary" type='button' onClick={() => delete_file("file")}>Delete</button><br></br>
+        <button className="btn btn-primary" type='button' onClick={() => upload_file()}>Upload</button><br></br>
+        <button className="btn btn-primary" type='button' onClick={() => download_file("file")}>Download</button>
         </div>
 
         

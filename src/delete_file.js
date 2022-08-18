@@ -2,7 +2,7 @@ import './App.css'
 import { S3 } from "@aws-sdk/client-s3";
 import { DeleteObjectCommand } from "@aws-sdk/client-s3";
 
-async function delete_file(){
+async function delete_file(data){
     const s3Client = new S3({
     endpoint: "https://fra1.digitaloceanspaces.com",
     region: "us-east-1",
@@ -13,8 +13,8 @@ async function delete_file(){
     
 });
 
-console.log('Ready');
- const bucketParams = { Bucket: "testingspace11", Key: "landscape.jpg" };
+console.log(data);
+ const bucketParams = { Bucket: "testingspace11", Key: data };
 try {
   const data = await s3Client.send(new DeleteObjectCommand(bucketParams));
   console.log("Success", data);

@@ -2,7 +2,7 @@ import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { S3 } from "@aws-sdk/client-s3";
 
-async function download_file(){
+async function download_file(data){
     const s3Client = new S3({
     endpoint: "https://fra1.digitaloceanspaces.com",
     region: "us-east-1",
@@ -13,11 +13,11 @@ async function download_file(){
     
   });
   
-  console.log('Ready');
+  console.log(data);
   
   const bucketParams = {
     Bucket: "testingspace11",
-    Key: "example.txt"
+    Key: data
   };
   
   try {
